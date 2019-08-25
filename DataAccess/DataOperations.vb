@@ -12,7 +12,7 @@ Public Module DataOperations
             .DataSource = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Database1.accdb")
         }
     Public Function LoadCustomersAccessForm() As DataTable
-        Using cn As New OleDb.OleDbConnection With
+        Using cn As New OleDbConnection With
             {
                 .ConnectionString = BuilderAccdb.ConnectionString
             }
@@ -62,11 +62,11 @@ Public Module DataOperations
         End Using
     End Function
     Public Sub UpdatePosition(dt As DataTable)
-        Using cn As New OleDb.OleDbConnection With
+        Using cn As New OleDbConnection With
             {
                 .ConnectionString = BuilderAccdb.ConnectionString
             }
-            Using cmd As New OleDb.OleDbCommand With {.Connection = cn}
+            Using cmd As New OleDbCommand With {.Connection = cn}
                 cmd.CommandText =
                     <SQL>
                         UPDATE Customer 
@@ -96,9 +96,9 @@ Public Module DataOperations
     ''' </summary>
     ''' <remarks></remarks>
     Public Sub UpdateListBoxData(ByVal dt As DataTable)
-        Using cn As New OleDb.OleDbConnection With {.ConnectionString = BuilderAccdb.ConnectionString}
+        Using cn As New OleDbConnection With {.ConnectionString = BuilderAccdb.ConnectionString}
             cn.Open()
-            Using cmd As New OleDb.OleDbCommand With {.Connection = cn}
+            Using cmd As New OleDbCommand With {.Connection = cn}
                 cmd.CommandText =
                     <SQL>
                         Update Table1
@@ -140,11 +140,11 @@ Public Module DataOperations
 
     End Function
     Public Sub SaveCustomerTextFile(dt As DataTable)
-        Dim sb As New System.Text.StringBuilder
+        Dim sb As New Text.StringBuilder
 
         For Each row As DataRow In dt.Rows
             sb.AppendLine(String.Join(",", row.ItemArray))
         Next
-        IO.File.WriteAllText(TextFileName, sb.ToString)
+        File.WriteAllText(TextFileName, sb.ToString)
     End Sub
 End Module
