@@ -6,7 +6,7 @@ Public Module DataOperations
     ''' Two forms use this connection string
     ''' </summary>
     ''' <remarks></remarks>
-    Public BuilderAccdb As New OleDb.OleDbConnectionStringBuilder With
+    Public BuilderAccdb As New OleDbConnectionStringBuilder With
         {
             .Provider = "Microsoft.ACE.OLEDB.12.0",
             .DataSource = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Database1.accdb")
@@ -16,6 +16,7 @@ Public Module DataOperations
             {
                 .ConnectionString = BuilderAccdb.ConnectionString
             }
+
             Using cmd As New OleDbCommand With {.Connection = cn}
                 cmd.CommandText =
                     <SQL>
@@ -39,10 +40,6 @@ Public Module DataOperations
                 dt.Columns("Identifier").ColumnMapping = MappingType.Hidden
                 dt.Columns("RowPosition").ColumnMapping = MappingType.Hidden
 
-                '
-                ' Process column added 12/5/2012 to demo copying data from
-                ' DataGridView1 to DataGridView2
-                '
                 dt.Columns.Add(New DataColumn With
                                {
                                    .ColumnName = "Process",

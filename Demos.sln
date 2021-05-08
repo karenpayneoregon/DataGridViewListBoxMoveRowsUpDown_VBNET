@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2041
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MoveDataRow_UpDown", "MoveDataRow_UpDown_1\MoveDataRow_UpDown.vbproj", "{005747D9-E520-4D61-BB21-50EF1A9F7A46}"
 EndProject
@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class projects", "Class projects", "{14EEE856-8A7C-4284-B84D-613093380D8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AB0C0221-0A87-4CFB-9F32-95A1A32DFFAE} = {14EEE856-8A7C-4284-B84D-613093380D8D}
+		{263998B4-D182-4CF7-A5BB-2FDAFDF131A4} = {14EEE856-8A7C-4284-B84D-613093380D8D}
+		{A815E66E-2704-4032-8264-20E4881FA9AC} = {14EEE856-8A7C-4284-B84D-613093380D8D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D2866775-7EBE-4D41-9609-25B607286E7E}
