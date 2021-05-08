@@ -10,11 +10,15 @@ Public Module LanguageExtensions
     Public Function GetChecked(sender As DataTable, ColumnName As String) As DataTable
         Dim d = (From T In sender.AsEnumerable Where T.Field(Of Boolean)(ColumnName) = True).ToList
         Dim dt = sender.Clone
+
         For Each row In d
             dt.Rows.Add(row.ItemArray)
         Next
+
         dt.Columns(ColumnName).ColumnMapping = MappingType.Hidden
+
         Return dt
+
     End Function
 
     ''' <summary>
@@ -27,16 +31,19 @@ Public Module LanguageExtensions
     ''' </remarks>
     <Runtime.CompilerServices.Extension()>
     Public Sub CloneColumns(Self As DataGridView, CloneFrom As DataGridView)
+
         If Self.ColumnCount = 0 Then
             For Each c As DataGridViewColumn In CloneFrom.Columns
                 Self.Columns.Add(CType(c.Clone, DataGridViewColumn))
             Next
         End If
+
     End Sub
 
     <DebuggerStepThrough()>
     <Runtime.CompilerServices.Extension()>
     Public Sub MoveRowUp(sender As DataGridView, bs As BindingSource)
+
         If Not String.IsNullOrWhiteSpace(bs.Sort) Then
             bs.Sort = ""
         End If
@@ -105,6 +112,7 @@ Public Module LanguageExtensions
     <DebuggerStepThrough()>
     <Runtime.CompilerServices.Extension()>
     Public Sub MoveRowDown(sender As BindingSource)
+
         If Not String.IsNullOrWhiteSpace(sender.Sort) Then
             sender.Sort = ""
         End If
@@ -128,6 +136,7 @@ Public Module LanguageExtensions
     <DebuggerStepThrough()>
     <Runtime.CompilerServices.Extension()>
     Public Sub MoveRowUp(sender As ListBox, bs As BindingSource)
+
         If Not String.IsNullOrWhiteSpace(bs.Sort) Then
             bs.Sort = ""
         End If
@@ -151,6 +160,7 @@ Public Module LanguageExtensions
         For rowIndex As Integer = 0 To dt.Rows.Count - 1
             dt.Rows(rowIndex).Item(2) = rowIndex
         Next
+
     End Sub
     <DebuggerStepThrough()>
     <Runtime.CompilerServices.Extension()>

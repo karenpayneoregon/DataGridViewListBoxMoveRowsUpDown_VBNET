@@ -1,6 +1,6 @@
 ﻿Imports System.Windows.Forms
 Public Class DownButton
-    Inherits Windows.Forms.Button
+    Inherits Button
 
     Public Sub New()
         MyBase.New()
@@ -13,7 +13,7 @@ Public Class DownButton
     End Sub
 End Class
 Public Class UpButton
-    Inherits Windows.Forms.Button
+    Inherits Button
 
     Public Sub New()
         MyBase.New()
