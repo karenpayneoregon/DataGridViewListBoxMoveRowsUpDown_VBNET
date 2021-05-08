@@ -5,7 +5,7 @@
 ''' </summary>
 ''' <remarks></remarks>
 Public Module LanguageExtensions
-    DebuggerStepThrough()>
+    <DebuggerStepThrough()>
     <Runtime.CompilerServices.Extension()>
     Public Function GetChecked(sender As DataTable, ColumnName As String) As DataTable
         Dim d = (From T In sender.AsEnumerable Where T.Field(Of Boolean)(ColumnName) = True).ToList
