@@ -1,6 +1,6 @@
 ### VB.NET Move rows up/down for DataGridView and ListBox
 
-![img](assets/vb1.png) ![img](assets/Versions.png)
+![img](assets/vb1.png) 
 
 :heavy_check_mark: `DataAccess project` read/write data to backend database or text file.
 
